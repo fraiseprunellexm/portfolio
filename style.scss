@@ -56,6 +56,19 @@ a{
   font-size: 12.5px;
   text-decoration: none;
 }
+.online-shop-btn,.online-shop-btn{
+  a{&:hover{opacity: 0.6;}}
+}
+
+.more-btn{
+  @include more-btn(115px);
+    a{@include btn-link;
+    &:hover{
+      color:$main-color;
+      background-color:#fff;
+    }
+  }
+}//more-btn
 /* ========================================
     ヘッダー
 ========================================= */
@@ -65,7 +78,7 @@ header{
   background-color:$main-color;
 }//header
 .h-wrapper{
-  width:70%;
+  width:1000px;
   margin:0 auto;
   height:auto;
 }//h-wrapper
@@ -97,13 +110,14 @@ header{
     li{
       float:left;
       padding-right:15px;
-    &.last{padding-right:0;}
+    &:last-child{padding-right:0;}
       }//li
     }//ul.sns-wrapper
 
   i.top-icon{font-size:16px;color:#fff;}
 
 }//h-info
+
 
 /* ========================================
     メイン
@@ -112,9 +126,29 @@ header{
 #top{
   height:750px;
   background:url('top.jpg');
+  }
+
+.translate{
+  position: fixed;
+  bottom:0;
+  left:50px;
+  display: fixed;
+  z-index: 1000;
+  background:#83971d;
+  a{
+    font-family: Arial;
+    font-size:16px;
+    font-weight: bold;
+    color:#fff;
+    display: block;
+    padding:6px 26px;
+  }
 }
+
+
+
 .top-menu{
-  width:70%;
+  width:1000px;
   margin: 0 auto;
   padding-top:15px;
 
@@ -123,7 +157,7 @@ header{
     background-color:purple;
     width:151px;
     height:45px;
-    margin-right:50px;
+    margin-right:20px;
   }//h1
   ul{
     float:left;
@@ -132,11 +166,8 @@ header{
     height:45px;
     li{
       display: inline-block;
-      width:120px;
-      &:first-child{
-        //margin-right:40px;
-        width:160px;
-      }
+      padding:0 1em;
+      &:last-child{margin-right:20px;}
         a{
           color:#fff;
           font-size:13.5px;
@@ -145,32 +176,12 @@ header{
       }//a
     }//li
   }//ul
-/*
-  ul.k-menu-lists{
-    text-align: center;
-    display: table;
-    table-layout: fixed;
-    li{
-      padding:0 5px;
-      line-height:20px;
-      border-right: 1px solid #fff;
-      height:40px;
-      width: 10%;
-      display: table-cell;
-      vertical-align: middle;
-      &:first-child{
-      padding-left:0;
-      }
-      &:last-child{
-        border-right: none;
-        padding-right:0;
-      }
-      a{font-size:12px;}
-    }//li
-  }//k-menu-lists*/
-
-  .online-shop-btn{
+.online-shop-btn{
     @include online-shop-btn(#fff,#bf0000,45px,45px);
+    a{
+      display: block;
+      color:#fff;
+    }
     span{padding-right:5px;}
   }
 }
@@ -192,6 +203,7 @@ h2{
     font-family:'Courgette', cursive;
   }
 }
+
 /*========== about ========== */
 #about{
   width:100%;
@@ -211,10 +223,7 @@ h2{
     .text-wrapper{
       @include text-wrapper;
       p{@include text;}
-        .more-btn{
-          @include more-btn(115px);
-            a{@include btn-link;}
-        }//more-btn
+
       }//text-wrapper
     }//right
 }
@@ -233,10 +242,6 @@ h2{
     .text-wrapper{
       @include text-wrapper;
         p{@include text;}
-          .more-btn{
-            @include more-btn(115px);
-              a{@include btn-link;}
-          }
       }
   }
   .right{
@@ -269,7 +274,7 @@ h2{
     padding:0;
       .more-btn{
         @include more-btn(340px);
-          a{@include btn-link;}
+        a{&:hover{color:black;}}
       }
     }
 }
@@ -329,6 +334,7 @@ h2{
       margin-top:13px;
       font-size: 12.5px;
       padding:3px 5px;
+      &:hover{opacity: 0.6;}
     }
 }
 
@@ -453,18 +459,18 @@ border-right:1px solid #c9c3ae;
 
 .sns-wrapper-foot{
   background:lighten($main-color,5%);
-  width:auto;
+  width:710px;
   height:auto;
-  padding:15px 50px;
+  padding:15px 0;
   display: inline-block;
     li{
       display: inline-block;
-      padding: 0 50px;
-        &:first-child{padding:0 50px 0 0;}
-        &:last-child{padding:0 0 0 50px;}
+      width:calc(100%/3.2);
           a{
+            text-align: center;
           color:#fff;
           font-size:14px;
+          display: block;
           }//a
       span{
         i{
@@ -483,9 +489,13 @@ border-right:1px solid #c9c3ae;
   .online-shop-btn{
     @include online-shop-btn($main-color,#fff,55px,55px);
     padding:0 35px;
-    span{
-      padding-right:10px;
+
+    span{padding-right:10px;
         i{color:$main-color}
+      }
+    a{
+      color:$main-color;
+      display: block;
     }
   }
   .online-p{
@@ -501,5 +511,5 @@ border-right:1px solid #c9c3ae;
   font-size:8.5px;
   padding:12px 0;
   background:#4b6e2c;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
