@@ -1,0 +1,49 @@
+$main-color:#59793a;
+//左右横並び
+@mixin column2{
+  width:50%;
+  height:690px;
+  float: left;
+}
+@mixin text-wrapper{
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  text-align:center;
+  }//text-wrapper
+
+  @mixin text{
+    font-size:15px;
+    letter-spacing: 2px;
+    margin:30px 0;
+  }
+
+  @mixin more-btn($top){
+    margin:0 auto;
+    margin-top:$top;
+    width:280px;
+    height:53px;
+    display: block;
+    border:solid 1px #fff;
+  }//more-btn
+
+@mixin btn-link{
+  font-size:15px;
+  letter-spacing: 2px;
+  line-height: 53px;
+  color:#fff;
+  display: block;
+}
+//
+@mixin online-shop-btn($t-color,$b-color,$height,$l-height){
+color:$t-color;
+float: right;
+background:$b-color;
+width:190px;
+height:$height;
+display: inline-block;
+line-height:$l-height;
+text-align: center;
+}
